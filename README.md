@@ -1,5 +1,7 @@
 🚀 Miffy Space Shooter Game
 
+**⚠️ This project is continuously being updated. Stay tuned for more features!**
+
 This Game is a 2D arcade-style shooting game built with Python and Pygame. Control your spaceship, dodge enemies, and shoot them down to score points. Your goal is to survive as long as possible while destroying enemy ships.
 
 🕹️ Features
