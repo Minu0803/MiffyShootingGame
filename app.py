@@ -25,6 +25,10 @@ player_y = 480
 player_x_change = 0
 player_y_change = 0  # 상하 이동을 위한 변수 추가
 
+# 적 이미지 크기
+enemy_width = 64  # 적 이미지의 너비
+enemy_height = 64  # 적 이미지의 높이
+
 # 적 설정 함수
 def create_enemies(num_of_enemies, level):
     enemy_img = []
@@ -54,7 +58,7 @@ bullet_img = pygame.image.load('bullet.png')  # 총알 이미지
 bullet_x = 0
 bullet_y = player_y
 bullet_x_change = 0
-bullet_y_change = 10
+bullet_y_change = 20
 bullet_state = "ready"  # "ready"는 화면에 없는 상태, "fire"는 발사 상태
 
 # 점수
@@ -103,10 +107,12 @@ def fire_bullet(x, y):
     screen.blit(bullet_img, (x + 16, y + 10))
 
 
+# 적과 총알의 충돌을 감지하는 함수
 def is_collision(enemy_x, enemy_y, bullet_x, bullet_y):
-    distance = math.sqrt(math.pow(enemy_x - bullet_x, 2) + math.pow(enemy_y - bullet_y, 2))
-    return distance < 27
-
+    if (bullet_x >= enemy_x and bullet_x <= enemy_x + enemy_width and
+        bullet_y >= enemy_y and bullet_y <= enemy_y + enemy_height):
+        return True
+    return False
 
 # 게임 루프
 running = True
@@ -124,13 +130,13 @@ while running:
         # 키보드 입력
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
-                player_x_change = -5
+                player_x_change = -8
             if event.key == pygame.K_RIGHT:
-                player_x_change = 5
+                player_x_change = 8
             if event.key == pygame.K_UP:
-                player_y_change = -5
+                player_y_change = -8
             if event.key == pygame.K_DOWN:
-                player_y_change = 5
+                player_y_change = 8
             if event.key == pygame.K_SPACE:
                 if bullet_state == "ready":
                     bullet_x = player_x
