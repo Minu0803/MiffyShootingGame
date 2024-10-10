@@ -7,7 +7,7 @@ pygame.init()
 
 # 화면 크기 설정
 screen_width = 1500
-screen_height = 1000
+screen_height = 900
 screen = pygame.display.set_mode((screen_width, screen_height))
 
 # 게임 제목 및 아이콘 설정
@@ -119,7 +119,7 @@ running = True
 while running:
 
     # 배경 화면 설정
-    screen.fill((0, 0, 0))  # 검정색 화면.
+    screen.fill((0, 0, 0))  # 검정색 화
     screen.blit(background, (0, 0))  # 배경 이미지
 
     # 이벤트 처리
