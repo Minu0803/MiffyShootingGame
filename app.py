@@ -119,7 +119,7 @@ running = True
 while running:
 
     # 배경 화면 설정
-    screen.fill((0, 0, 0))  # 검정색 화면
+    screen.fill((0, 0, 0))  # 검정색 화면.
     screen.blit(background, (0, 0))  # 배경 이미지
 
     # 이벤트 처리
