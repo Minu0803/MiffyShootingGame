@@ -12,7 +12,7 @@ screen = pygame.display.set_mode((screen_width, screen_height))
 
 # 게임 제목 및 아이콘 설정
 pygame.display.set_caption("Space Shooter")
-icon = pygame.image.load('spaceship.png')  # 아이콘 이미지 파일을 프로젝트 디렉토리에 배치해야 합니다.
+icon = pygame.image.load('spaceship.png')  # 아이콘 이미지 파일을 프로젝트 디렉토리에 배치해야 합니다
 pygame.display.set_icon(icon)
 
 # 배경 이미지
